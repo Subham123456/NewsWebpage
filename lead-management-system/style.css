@@ -1,0 +1,194 @@
+header {
+  background-color: #f2f2f2;
+  height: 80px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background-image: url('/images/web page.png');
+  background-size: cover;
+  background-blend-mode: lighten;
+}
+
+header img {
+  height: 60px;
+}
+
+nav a.active {
+  font-weight: bold;
+  color: blue;
+}
+
+header nav ul {
+  list-style: none;
+  display: flex;
+}
+
+header nav ul li {
+  margin-right: 20px;
+}
+
+header nav ul li a {
+  text-decoration: none;
+  color: #333;
+}
+
+  /*style for search*/
+
+  #search-section {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  #search-input {
+    width: 100%;
+    text-align:center;
+    display: block;
+    border-radius: 30px 0 0 30px;
+    padding: 5px;
+    margin-right: 5px;
+  }
+  
+  #search-button {
+    cursor:pointer;
+    border-radius: 0 30px 30px 0; 
+    padding: 5px 10px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+  }
+  
+  .article {
+    margin-bottom: 10px;
+  }
+    
+  /*style for main*/
+
+  main {
+    width: 100%;
+    padding: 20px;
+  }
+  
+  article {
+    margin-bottom: 20px;
+  }
+  
+  article h2 {
+    font-size: 24px;
+    color: white;
+  }
+  
+  article img {
+    max-height: 500px;
+    width:100%;
+    opacity: 0.8;
+    display: block;
+    margin-left: auto;
+    margin-right: auto
+  }
+  
+  article p {
+    margin-bottom: 10px;
+    color: white;
+  }
+  
+  article a {
+    text-decoration: none;
+    color: blue;
+  }
+
+  /*style for subscription*/
+
+  #subscription-section {
+    padding: 20px;
+    background-color: #f5f5f5;
+  }
+
+  h2{
+    display: white;
+    font-size: 1.5em;
+    font-weight: bold;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center
+  }
+  
+  #subscription-form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  
+  label {
+    margin-bottom: 5px;
+  }
+  
+  input[type="email"] {
+    padding: 5px;
+    margin-bottom: 10px;
+  }
+  
+  button[type="submit"] {
+    padding: 10px 20px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #45a049;
+  }
+
+  /*media queries*/
+
+/* Styles for mobile devices */
+@media only screen and (max-width: 767px) {
+  /* Adjust the layout for mobile devices using CSS Grid */
+  .container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 10px;
+  }
+}
+
+/* Styles for tablets */
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+  /* Adjust the layout for tablets using CSS Grid */
+  .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+  }
+}
+
+/* Styles for desktops and larger screens */
+@media only screen and (min-width: 1024px) {
+  /* Adjust the layout for desktops and larger screens using CSS Grid */
+  .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 10px;
+  }
+}
+
+/* Define a CSS class for the fade-in animation */
+
+.fade-in {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+/* Define the CSS class to show the element with a fade-in effect */
+.fade-in.show {
+  opacity: 1;
+}

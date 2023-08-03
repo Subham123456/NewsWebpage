@@ -1,0 +1,17 @@
+[
+    {
+      "title": "News Article 1",
+      "description": "This is the description of News Article 1.",
+      "image": "path/to/article1-image.jpg",
+      "author": "John Doe",
+      "date": "2023-06-01"
+    },
+    {
+      "title": "News Article 2",
+      "description": "This is the description of News Article 2.",
+      "image": "path/to/article2-image.jpg",
+      "author": "Jane Smith",
+      "date": "2023-06-02"
+    }
+]
+
