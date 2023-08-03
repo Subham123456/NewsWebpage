@@ -108,7 +108,7 @@ header nav ul li a {
 
   #subscription-section {
     padding: 20px;
-    background-color: #f5f5f5;
+    color: chocolate;
   }
 
   h2{
@@ -191,4 +191,61 @@ header nav ul li a {
 /* Define the CSS class to show the element with a fade-in effect */
 .fade-in.show {
   opacity: 1;
+}
+
+.footer{
+  background: #333;
+  /*   */
+}
+
+.footer .box-container{
+  display: flex;
+  flex-wrap: wrap;
+  /* height: 55rem; */
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.footer .box-container .box{
+  padding: 1rem 0;
+  flex: 1 1 25rem;
+}
+
+.footer .box-container .box h3{
+  font-size: 2.5rem;
+  padding: .7rem 0;
+  color: aliceblue;
+}
+
+.footer .box-container .box p{
+  font-size: 1.5rem;
+  padding: .7rem 0;
+  color: #eee;
+}
+
+.footer .box-container .box a{
+  display: block;
+  font-size: 1.5rem;
+  padding: .7rem 0;
+  color: #eee;
+}
+
+.footer .box-container .box a:hover{
+  color: chocolate;
+  text-decoration: underline;
+}
+
+.footer .credit{
+  text-align: center;
+  padding: 2rem 1rem;
+  margin-top: 1rem;
+  font-size: 2rem;
+  font-weight: normal;
+  color: aliceblue;
+  border-top: .1rem solid rgba(0,0,0,.2);
+}
+
+.footer .credit span{
+  color: chocolate;
 }
