@@ -11,7 +11,7 @@ header {
 body {
   width: 100vw;
   height: 100vh;
-  background-image: url('/images/web page.png');
+  background-image: url("../images/web_page.png");
   background-size: cover;
   background-blend-mode: lighten;
 }
