@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /login
+Disallow: /signup
+Disallow: /profile
+
+Sitemap: https://newshub.com/sitemap.xml
+

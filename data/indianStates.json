@@ -1,0 +1,197 @@
+{
+  "states": [
+    {
+      "name": "Andhra Pradesh",
+      "code": "AP",
+      "districts": ["Visakhapatnam", "Vijayawada", "Guntur", "Nellore", "Kurnool", "Tirupati", "Rajahmundry", "Kadapa", "Anantapur", "Eluru"],
+      "majorCities": ["Visakhapatnam", "Vijayawada", "Guntur", "Nellore"]
+    },
+    {
+      "name": "Arunachal Pradesh",
+      "code": "AR",
+      "districts": ["Itanagar", "Naharlagun", "Tawang", "Bomdila", "Pasighat"],
+      "majorCities": ["Itanagar", "Naharlagun"]
+    },
+    {
+      "name": "Assam",
+      "code": "AS",
+      "districts": ["Guwahati", "Silchar", "Dibrugarh", "Jorhat", "Nagaon", "Tinsukia", "Tezpur", "Bongaigaon", "Dhubri", "Sivasagar"],
+      "majorCities": ["Guwahati", "Silchar", "Dibrugarh", "Jorhat"]
+    },
+    {
+      "name": "Bihar",
+      "code": "BR",
+      "districts": ["Patna", "Gaya", "Bhagalpur", "Muzaffarpur", "Purnia", "Darbhanga", "Munger", "Bihar Sharif", "Arrah", "Katihar"],
+      "majorCities": ["Patna", "Gaya", "Bhagalpur", "Muzaffarpur"]
+    },
+    {
+      "name": "Chhattisgarh",
+      "code": "CG",
+      "districts": ["Raipur", "Bhilai", "Bilaspur", "Durg", "Rajnandgaon", "Korba", "Jagdalpur", "Raigarh", "Ambikapur", "Dhamtari"],
+      "majorCities": ["Raipur", "Bhilai", "Bilaspur", "Durg"]
+    },
+    {
+      "name": "Goa",
+      "code": "GA",
+      "districts": ["Panaji", "Margao", "Vasco da Gama", "Mapusa", "Ponda"],
+      "majorCities": ["Panaji", "Margao", "Vasco da Gama"]
+    },
+    {
+      "name": "Gujarat",
+      "code": "GJ",
+      "districts": ["Ahmedabad", "Surat", "Vadodara", "Rajkot", "Bhavnagar", "Jamnagar", "Gandhinagar", "Anand", "Bharuch", "Junagadh"],
+      "majorCities": ["Ahmedabad", "Surat", "Vadodara", "Rajkot"]
+    },
+    {
+      "name": "Haryana",
+      "code": "HR",
+      "districts": ["Gurgaon", "Faridabad", "Panipat", "Ambala", "Karnal", "Hisar", "Rohtak", "Yamunanagar", "Sonipat", "Panchkula"],
+      "majorCities": ["Gurgaon", "Faridabad", "Panipat", "Ambala"]
+    },
+    {
+      "name": "Himachal Pradesh",
+      "code": "HP",
+      "districts": ["Shimla", "Dharamshala", "Mandi", "Solan", "Kullu", "Kangra", "Hamirpur", "Una", "Bilaspur", "Chamba"],
+      "majorCities": ["Shimla", "Dharamshala", "Mandi", "Solan"]
+    },
+    {
+      "name": "Jharkhand",
+      "code": "JH",
+      "districts": ["Ranchi", "Jamshedpur", "Dhanbad", "Bokaro", "Hazaribagh", "Deoghar", "Giridih", "Dumka", "Hazaribagh", "Ramgarh"],
+      "majorCities": ["Ranchi", "Jamshedpur", "Dhanbad", "Bokaro"]
+    },
+    {
+      "name": "Karnataka",
+      "code": "KA",
+      "districts": ["Bangalore", "Mysore", "Hubli", "Mangalore", "Belgaum", "Gulbarga", "Davangere", "Bellary", "Bijapur", "Shimoga"],
+      "majorCities": ["Bangalore", "Mysore", "Hubli", "Mangalore"]
+    },
+    {
+      "name": "Kerala",
+      "code": "KL",
+      "districts": ["Kochi", "Thiruvananthapuram", "Kozhikode", "Thrissur", "Kannur", "Kollam", "Alappuzha", "Palakkad", "Malappuram", "Ernakulam"],
+      "majorCities": ["Kochi", "Thiruvananthapuram", "Kozhikode", "Thrissur"]
+    },
+    {
+      "name": "Madhya Pradesh",
+      "code": "MP",
+      "districts": ["Bhopal", "Indore", "Gwalior", "Jabalpur", "Ujjain", "Raipur", "Sagar", "Dewas", "Satna", "Ratlam"],
+      "majorCities": ["Bhopal", "Indore", "Gwalior", "Jabalpur"]
+    },
+    {
+      "name": "Maharashtra",
+      "code": "MH",
+      "districts": ["Mumbai", "Pune", "Nagpur", "Nashik", "Aurangabad", "Solapur", "Thane", "Pimpri-Chinchwad", "Kalyan", "Vasai-Virar"],
+      "majorCities": ["Mumbai", "Pune", "Nagpur", "Nashik"]
+    },
+    {
+      "name": "Manipur",
+      "code": "MN",
+      "districts": ["Imphal", "Thoubal", "Bishnupur", "Churachandpur", "Ukhrul"],
+      "majorCities": ["Imphal"]
+    },
+    {
+      "name": "Meghalaya",
+      "code": "ML",
+      "districts": ["Shillong", "Tura", "Jowai", "Nongpoh", "Williamnagar"],
+      "majorCities": ["Shillong", "Tura"]
+    },
+    {
+      "name": "Mizoram",
+      "code": "MZ",
+      "districts": ["Aizawl", "Lunglei", "Champhai", "Serchhip", "Kolasib"],
+      "majorCities": ["Aizawl"]
+    },
+    {
+      "name": "Nagaland",
+      "code": "NL",
+      "districts": ["Kohima", "Dimapur", "Mokokchung", "Tuensang", "Wokha"],
+      "majorCities": ["Kohima", "Dimapur"]
+    },
+    {
+      "name": "Odisha",
+      "code": "OD",
+      "districts": ["Bhubaneswar", "Cuttack", "Rourkela", "Berhampur", "Sambalpur", "Puri", "Balasore", "Bhadrak", "Baripada", "Jharsuguda"],
+      "majorCities": ["Bhubaneswar", "Cuttack", "Rourkela", "Berhampur"]
+    },
+    {
+      "name": "Punjab",
+      "code": "PB",
+      "districts": ["Ludhiana", "Amritsar", "Jalandhar", "Patiala", "Bathinda", "Mohali", "Hoshiarpur", "Pathankot", "Moga", "Firozpur"],
+      "majorCities": ["Ludhiana", "Amritsar", "Jalandhar", "Patiala"]
+    },
+    {
+      "name": "Rajasthan",
+      "code": "RJ",
+      "districts": ["Jaipur", "Jodhpur", "Kota", "Bikaner", "Ajmer", "Udaipur", "Bhilwara", "Alwar", "Bharatpur", "Sikar"],
+      "majorCities": ["Jaipur", "Jodhpur", "Kota", "Bikaner"]
+    },
+    {
+      "name": "Sikkim",
+      "code": "SK",
+      "districts": ["Gangtok", "Namchi", "Mangan", "Gyalshing"],
+      "majorCities": ["Gangtok"]
+    },
+    {
+      "name": "Tamil Nadu",
+      "code": "TN",
+      "districts": ["Chennai", "Coimbatore", "Madurai", "Tiruchirappalli", "Salem", "Tirunelveli", "Erode", "Vellore", "Thanjavur", "Dindigul"],
+      "majorCities": ["Chennai", "Coimbatore", "Madurai", "Tiruchirappalli"]
+    },
+    {
+      "name": "Telangana",
+      "code": "TS",
+      "districts": ["Hyderabad", "Warangal", "Nizamabad", "Karimnagar", "Khammam", "Ramagundam", "Mahabubnagar", "Nalgonda", "Adilabad", "Siddipet"],
+      "majorCities": ["Hyderabad", "Warangal", "Nizamabad", "Karimnagar"]
+    },
+    {
+      "name": "Tripura",
+      "code": "TR",
+      "districts": ["Agartala", "Udaipur", "Dharmanagar", "Kailasahar"],
+      "majorCities": ["Agartala"]
+    },
+    {
+      "name": "Uttar Pradesh",
+      "code": "UP",
+      "districts": ["Lucknow", "Kanpur", "Agra", "Varanasi", "Allahabad", "Meerut", "Ghaziabad", "Noida", "Bareilly", "Aligarh"],
+      "majorCities": ["Lucknow", "Kanpur", "Agra", "Varanasi"]
+    },
+    {
+      "name": "Uttarakhand",
+      "code": "UK",
+      "districts": ["Dehradun", "Haridwar", "Roorkee", "Haldwani", "Rudrapur", "Kashipur", "Rishikesh", "Nainital", "Mussoorie", "Almora"],
+      "majorCities": ["Dehradun", "Haridwar", "Roorkee", "Haldwani"]
+    },
+    {
+      "name": "West Bengal",
+      "code": "WB",
+      "districts": ["Kolkata", "Howrah", "Durgapur", "Asansol", "Siliguri", "Kharagpur", "Bardhaman", "Malda", "Cooch Behar", "Jalpaiguri"],
+      "majorCities": ["Kolkata", "Howrah", "Durgapur", "Asansol"]
+    },
+    {
+      "name": "Delhi",
+      "code": "DL",
+      "districts": ["New Delhi", "Central Delhi", "North Delhi", "South Delhi", "East Delhi", "West Delhi", "North East Delhi", "North West Delhi", "South West Delhi", "Shahdara"],
+      "majorCities": ["New Delhi"]
+    },
+    {
+      "name": "Jammu and Kashmir",
+      "code": "JK",
+      "districts": ["Srinagar", "Jammu", "Anantnag", "Baramulla", "Sopore", "Udhampur", "Kathua", "Rajouri", "Poonch", "Doda"],
+      "majorCities": ["Srinagar", "Jammu"]
+    },
+    {
+      "name": "Ladakh",
+      "code": "LA",
+      "districts": ["Leh", "Kargil"],
+      "majorCities": ["Leh", "Kargil"]
+    },
+    {
+      "name": "Puducherry",
+      "code": "PY",
+      "districts": ["Puducherry", "Karaikal", "Mahe", "Yanam"],
+      "majorCities": ["Puducherry"]
+    }
+  ]
+}
+

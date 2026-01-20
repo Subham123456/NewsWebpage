@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NewsHub - Your Daily News Source | Breaking News, Latest Updates</title>
+    <meta name="description" content="Stay informed with NewsHub - Your trusted source for breaking news, latest updates, and in-depth analysis. Get news from India and around the world.">
+    <meta name="keywords" content="news, breaking news, latest news, India news, international news, technology news, business news, sports news">
+    <meta name="author" content="NewsHub">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://newshub.com/">
+    <meta property="og:title" content="NewsHub - Your Daily News Source">
+    <meta property="og:description" content="Stay informed with NewsHub - Your trusted source for breaking news, latest updates, and in-depth analysis.">
+    <meta property="og:image" content="https://newshub.com/images/logotype.png">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://newshub.com/">
+    <meta property="twitter:title" content="NewsHub - Your Daily News Source">
+    <meta property="twitter:description" content="Stay informed with NewsHub - Your trusted source for breaking news, latest updates, and in-depth analysis.">
+    <meta property="twitter:image" content="https://newshub.com/images/logotype.png">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/images/logotype.png">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://newshub.com/">
+    
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "NewsMediaOrganization",
+        "name": "NewsHub",
+        "url": "https://newshub.com",
+        "logo": "https://newshub.com/images/logotype.png",
+        "description": "Your trusted source for breaking news, latest updates, and in-depth analysis",
+        "sameAs": [
+            "https://www.facebook.com/newshub",
+            "https://www.twitter.com/newshub"
+        ]
+    }
+    </script>
+    
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="/js/auth.js" defer></script>
+    <script src="/js/appf.js" defer></script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="main-header">
+        <div class="header-container">
+            <div class="logo-container">
+                <img src="/images/logotype.png" alt="NewsHub Logo" class="logo">
+                <span class="logo-text">NewsHub</span>
+            </div>
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li><a href="#home" class="nav-link active">Home</a></li>
+                    <li><a href="#news" class="nav-link">News</a></li>
+                    <li><a href="#categories" class="nav-link">Categories</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                </ul>
+                <div class="auth-nav" id="auth-nav">
+                    <button id="dark-mode-toggle" class="dark-mode-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+                        <svg class="dark-mode-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="5"></circle>
+                            <line x1="12" y1="1" x2="12" y2="3"></line>
+                            <line x1="12" y1="21" x2="12" y2="23"></line>
+                            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                            <line x1="1" y1="12" x2="3" y2="12"></line>
+                            <line x1="21" y1="12" x2="23" y2="12"></line>
+                            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                        </svg>
+                        <svg class="dark-mode-icon hidden" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                        </svg>
+                    </button>
+                    <!-- Auth buttons will be dynamically inserted here -->
+                </div>
+            </nav>
+            <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section" id="home">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">Stay Informed, Stay Ahead</h1>
+            <p class="hero-subtitle">Your trusted source for breaking news, in-depth analysis, and trending stories</p>
+            
+            <!-- Enhanced Search Section -->
+            <div class="search-section">
+                <div class="search-container">
+                    <svg class="search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.35-4.35"></path>
+                    </svg>
+                    <input type="text" id="search-input" class="search-input" placeholder="Search for news, topics, or keywords...">
+                    <button id="search-button" class="search-button">
+                        <span>Search</span>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                    </button>
+                </div>
+                <div class="search-suggestions">
+                    <span class="suggestion-label">Trending:</span>
+                    <a href="#" class="suggestion-tag">Technology</a>
+                    <a href="#" class="suggestion-tag">Science</a>
+                    <a href="#" class="suggestion-tag">Business</a>
+                    <a href="#" class="suggestion-tag">Health</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Featured Article Section -->
+        <section class="featured-section">
+            <div class="container">
+                <div class="section-header-featured">
+                    <h2 class="section-title">Featured Stories</h2>
+                    <div class="featured-controls">
+                        <button class="featured-nav-btn prev-btn" aria-label="Previous story">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="15 18 9 12 15 6"></polyline>
+                            </svg>
+                        </button>
+                        <div class="featured-indicators"></div>
+                        <button class="featured-nav-btn next-btn" aria-label="Next story">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <div class="featured-carousel">
+                    <div class="featured-slides-container" id="featured-slides">
+                        <!-- Featured articles will be dynamically loaded here -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- News Grid Section -->
+        <section class="news-section" id="news">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Latest News</h2>
+                    <div class="header-controls">
+                        <div class="geographic-tabs">
+                            <button class="geo-tab active" data-region="all">All News</button>
+                            <button class="geo-tab" data-region="domestic">Domestic</button>
+                            <button class="geo-tab" data-region="international">International</button>
+                            <button class="geo-tab" data-region="district">District</button>
+                        </div>
+                        <div class="location-selector-container">
+                            <button class="location-selector-btn" id="location-selector-btn">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                    <circle cx="12" cy="10" r="3"></circle>
+                                </svg>
+                                <span id="location-text">Select Location</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="filter-tabs-container">
+                    <div class="filter-tabs">
+                        <button class="filter-tab active" data-filter="all">All</button>
+                        <button class="filter-tab" data-filter="technology">Technology</button>
+                        <button class="filter-tab" data-filter="science">Science</button>
+                        <button class="filter-tab" data-filter="business">Business</button>
+                        <button class="filter-tab" data-filter="health">Health</button>
+                        <button class="filter-tab" data-filter="entertainment">Entertainment</button>
+                        <button class="filter-tab" data-filter="sports">Sports</button>
+                    </div>
+                </div>
+                <div id="news-container" class="news-grid">
+                    <!-- News articles will be dynamically loaded here -->
+                </div>
+                <div class="load-more-container">
+                    <button class="load-more-btn">Load More Articles</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Trending & Most Read Section -->
+        <section class="trending-section" id="trending">
+            <div class="container">
+                <div class="trending-grid">
+                    <div class="trending-widget">
+                        <h3 class="widget-title">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                            </svg>
+                            Trending Now
+                        </h3>
+                        <div id="trending-articles" class="trending-list">
+                            <!-- Trending articles will be loaded here -->
+                        </div>
+                    </div>
+                    <div class="most-read-widget">
+                        <h3 class="widget-title">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+                                <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+                            </svg>
+                            Most Read
+                        </h3>
+                        <div id="most-read-articles" class="most-read-list">
+                            <!-- Most read articles will be loaded here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="about-section" id="about">
+            <div class="container">
+                <div class="about-content">
+                    <div class="about-text">
+                        <h2 class="section-title">About NewsHub</h2>
+                        <p class="about-description">
+                            NewsHub is your trusted destination for breaking news, in-depth analysis, and trending stories from around the world. 
+                            We're committed to delivering accurate, timely, and engaging content that keeps you informed and connected.
+                        </p>
+                        <p class="about-description">
+                            Our mission is to provide a comprehensive news platform that covers technology, science, business, health, and more. 
+                            We believe in the power of information to shape perspectives and drive positive change in society.
+                        </p>
+                        <div class="about-features">
+                            <div class="feature-item">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                                </svg>
+                                <div>
+                                    <h4>Accurate Reporting</h4>
+                                    <p>Verified facts from trusted sources</p>
+                                </div>
+                            </div>
+                            <div class="feature-item">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <polyline points="12 6 12 12 16 14"></polyline>
+                                </svg>
+                                <div>
+                                    <h4>Timely Updates</h4>
+                                    <p>Breaking news delivered in real-time</p>
+                                </div>
+                            </div>
+                            <div class="feature-item">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                    <circle cx="9" cy="7" r="4"></circle>
+                                    <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                                    <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                                </svg>
+                                <div>
+                                    <h4>Expert Analysis</h4>
+                                    <p>Insights from industry professionals</p>
+                                </div>
+                            </div>
+                            <div class="feature-item">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                                    <line x1="8" y1="21" x2="16" y2="21"></line>
+                                    <line x1="12" y1="17" x2="12" y2="21"></line>
+                                </svg>
+                                <div>
+                                    <h4>Modern Platform</h4>
+                                    <p>Responsive design for all devices</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="about-stats">
+                        <div class="stat-item">
+                            <div class="stat-number">10K+</div>
+                            <div class="stat-label">Daily Readers</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">500+</div>
+                            <div class="stat-label">Articles Published</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">50+</div>
+                            <div class="stat-label">Expert Writers</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">24/7</div>
+                            <div class="stat-label">News Coverage</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Newsletter Subscription Section -->
+    <section id="subscription-section" class="subscription-section">
+        <div class="container">
+            <div class="subscription-content">
+                <div class="subscription-text">
+                    <h2 class="subscription-title">Stay Updated</h2>
+                    <p class="subscription-description">
+                        Get the latest news and stories delivered directly to your inbox. 
+                        Join thousands of readers who stay informed with our daily newsletter.
+                    </p>
+                </div>
+                <form id="subscription-form" class="subscription-form">
+                    <div class="input-group">
+                        <svg class="input-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                            <polyline points="22,6 12,13 2,6"></polyline>
+                        </svg>
+                        <input type="email" id="email-input" class="email-input" placeholder="Enter your email address" required>
+                        <button type="submit" class="subscribe-btn">
+                            <span>Subscribe</span>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                <polyline points="12 5 19 12 12 19"></polyline>
+                            </svg>
+                        </button>
+                    </div>
+                    <p class="subscription-note">We respect your privacy. Unsubscribe at any time.</p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-title">About Us</h3>
+                    <p class="footer-description">
+                        NewsHub is your trusted source for breaking news, in-depth analysis, and trending stories. 
+                        We're committed to delivering accurate, timely, and engaging content to keep you informed.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Facebook">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Twitter">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Instagram">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="LinkedIn">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                                <rect x="2" y="9" width="4" height="12"></rect>
+                                <circle cx="4" cy="4" r="2"></circle>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h3 class="footer-title">Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#news">Latest News</a></li>
+                        <li><a href="#categories">Categories</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3 class="footer-title">Categories</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Technology</a></li>
+                        <li><a href="#">Science</a></li>
+                        <li><a href="#">Business</a></li>
+                        <li><a href="#">Health</a></li>
+                        <li><a href="#">Entertainment</a></li>
+                        <li><a href="#">Sports</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3 class="footer-title">Contact</h3>
+                    <ul class="footer-contact">
+                        <li>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                <circle cx="12" cy="10" r="3"></circle>
+                            </svg>
+                            <span>123 News Street, Media City</span>
+                        </li>
+                        <li>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                            </svg>
+                            <span>+1 (555) 123-4567</span>
+                        </li>
+                        <li>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                            <span>contact@newshub.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p class="footer-credit">
+                    Created by <span>Mr. Subham Mandal</span> | All rights reserved © 2023
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Location Selector Modal -->
+    <div id="location-modal" class="modal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content location-modal-content">
+            <button class="modal-close" aria-label="Close modal">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+            <h2 class="modal-title">Select Location</h2>
+            <div class="location-selector">
+                <div class="location-tabs">
+                    <button class="location-tab active" data-location-type="state">State</button>
+                    <button class="location-tab" data-location-type="district">District</button>
+                </div>
+                <div class="location-search">
+                    <input type="text" id="location-search-input" placeholder="Search state or district..." class="location-search-input">
+                </div>
+                <div id="location-list" class="location-list">
+                    <!-- Location options will be loaded here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Categories Modal Popup -->
+    <div id="categories-modal" class="modal">
+        <div class="modal-overlay" id="categories-modal-overlay"></div>
+        <div class="modal-content categories-modal-content">
+            <button class="modal-close" id="categories-modal-close" aria-label="Close modal">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+            <h2 class="modal-title">Explore Categories</h2>
+            <p class="modal-subtitle">Browse news by topic and stay updated with what matters to you</p>
+            <div class="categories-grid">
+                <div class="category-card" data-category="technology">
+                    <div class="category-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                            <line x1="8" y1="21" x2="16" y2="21"></line>
+                            <line x1="12" y1="17" x2="12" y2="21"></line>
+                        </svg>
+                    </div>
+                    <h3 class="category-title">Technology</h3>
+                    <p class="category-description">Latest tech innovations, AI breakthroughs, and digital trends shaping our future.</p>
+                    <button class="category-btn" onclick="if(window.filterByCategory) { window.filterByCategory('technology'); }">View Articles</button>
+                </div>
+
+                <div class="category-card" data-category="science">
+                    <div class="category-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <path d="M12 6v6l4 2"></path>
+                        </svg>
+                    </div>
+                    <h3 class="category-title">Science</h3>
+                    <p class="category-description">Scientific discoveries, research findings, and breakthroughs in various fields.</p>
+                    <button class="category-btn" onclick="if(window.filterByCategory) { window.filterByCategory('science'); }">View Articles</button>
+                </div>
+
+                <div class="category-card" data-category="business">
+                    <div class="category-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="12" y1="1" x2="12" y2="23"></line>
+                            <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                        </svg>
+                    </div>
+                    <h3 class="category-title">Business</h3>
+                    <p class="category-description">Market trends, economic updates, and business insights from around the world.</p>
+                    <button class="category-btn" onclick="if(window.filterByCategory) { window.filterByCategory('business'); }">View Articles</button>
+                </div>
+
+                <div class="category-card" data-category="health">
+                    <div class="category-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                        </svg>
+                    </div>
+                    <h3 class="category-title">Health</h3>
+                    <p class="category-description">Medical news, wellness tips, and health research impacting lives worldwide.</p>
+                    <button class="category-btn" onclick="if(window.filterByCategory) { window.filterByCategory('health'); }">View Articles</button>
+                </div>
+
+                <div class="category-card" data-category="entertainment">
+                    <div class="category-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                        </svg>
+                    </div>
+                    <h3 class="category-title">Entertainment</h3>
+                    <p class="category-description">Movies, music, celebrity news, and cultural events making headlines.</p>
+                    <button class="category-btn" onclick="if(window.filterByCategory) { window.filterByCategory('entertainment'); }">View Articles</button>
+                </div>
+
+                <div class="category-card" data-category="sports">
+                    <div class="category-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <path d="M12 6v6l4 2"></path>
+                        </svg>
+                    </div>
+                    <h3 class="category-title">Sports</h3>
+                    <p class="category-description">Latest scores, player updates, and sports news from around the globe.</p>
+                    <button class="category-btn" onclick="if(window.filterByCategory) { window.filterByCategory('sports'); }">View Articles</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-to-top" aria-label="Scroll to top">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="18 15 12 9 6 15"></polyline>
+        </svg>
+    </button>
+</body>
+</html>

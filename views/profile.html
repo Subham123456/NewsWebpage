@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - NewsHub</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="/js/auth.js" defer></script>
+    <script src="/js/appf.js" defer></script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="main-header">
+        <div class="header-container">
+            <div class="logo-container">
+                <img src="/images/logotype.png" alt="NewsHub Logo" class="logo">
+                <span class="logo-text">NewsHub</span>
+            </div>
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li><a href="/" class="nav-link">Home</a></li>
+                    <li><a href="/#news" class="nav-link">News</a></li>
+                    <li><a href="/#about" class="nav-link">About</a></li>
+                </ul>
+                <div class="auth-nav" id="auth-nav">
+                    <!-- Auth buttons will be dynamically inserted here -->
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Profile Section -->
+    <section class="profile-section">
+        <div class="container">
+            <div class="profile-header">
+                <h1 class="profile-title">My Profile</h1>
+                <p class="profile-subtitle">Manage your account and preferences</p>
+            </div>
+
+            <div class="profile-content">
+                <!-- User Info Card -->
+                <div class="profile-card">
+                    <h2 class="card-title">Account Information</h2>
+                    <div class="user-info" id="user-info">
+                        <div class="info-item">
+                            <span class="info-label">Name:</span>
+                            <span class="info-value" id="user-name">Loading...</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Email:</span>
+                            <span class="info-value" id="user-email">Loading...</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Member Since:</span>
+                            <span class="info-value" id="user-created">Loading...</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bookmarks Card -->
+                <div class="profile-card">
+                    <h2 class="card-title">Bookmarked Articles</h2>
+                    <div class="bookmarks-container" id="bookmarks-container">
+                        <p class="loading-text">Loading bookmarks...</p>
+                    </div>
+                </div>
+
+                <!-- Preferences Card -->
+                <div class="profile-card">
+                    <h2 class="card-title">Preferences</h2>
+                    <div class="preferences-form" id="preferences-form">
+                        <div class="form-group">
+                            <label class="form-label">Preferred Categories</label>
+                            <div class="category-checkboxes">
+                                <label class="checkbox-label">
+                                    <input type="checkbox" value="technology" class="category-checkbox">
+                                    <span>Technology</span>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" value="science" class="category-checkbox">
+                                    <span>Science</span>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" value="business" class="category-checkbox">
+                                    <span>Business</span>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" value="health" class="category-checkbox">
+                                    <span>Health</span>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" value="entertainment" class="category-checkbox">
+                                    <span>Entertainment</span>
+                                </label>
+                                <label class="checkbox-label">
+                                    <input type="checkbox" value="sports" class="category-checkbox">
+                                    <span>Sports</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="newsletter-pref" class="preference-checkbox">
+                                <span>Subscribe to Newsletter</span>
+                            </label>
+                        </div>
+                        <button class="save-preferences-btn" onclick="savePreferences()">Save Preferences</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Load user data and bookmarks
+        document.addEventListener('DOMContentLoaded', async () => {
+            if (!window.authAPI || !window.authAPI.isAuthenticated()) {
+                window.location.href = '/login?redirect=/profile';
+                return;
+            }
+
+            await loadUserInfo();
+            await loadBookmarks();
+            await loadPreferences();
+        });
+
+        async function loadUserInfo() {
+            try {
+                const token = window.authAPI.getToken();
+                const response = await fetch('/api/auth/me', {
+                    headers: {
+                        'Authorization': `Bearer ${token}`
+                    }
+                });
+
+                if (response.ok) {
+                    const data = await response.json();
+                    if (data.success) {
+                        document.getElementById('user-name').textContent = data.user.name;
+                        document.getElementById('user-email').textContent = data.user.email;
+                        const createdDate = new Date(data.user.createdAt);
+                        document.getElementById('user-created').textContent = createdDate.toLocaleDateString();
+                    }
+                }
+            } catch (error) {
+                console.error('Error loading user info:', error);
+            }
+        }
+
+        async function loadBookmarks() {
+            try {
+                const token = window.authAPI.getToken();
+                const response = await fetch('/api/user/bookmarks', {
+                    headers: {
+                        'Authorization': `Bearer ${token}`
+                    }
+                });
+
+                const container = document.getElementById('bookmarks-container');
+                
+                if (response.ok) {
+                    const data = await response.json();
+                    if (data.success && data.bookmarks.length > 0) {
+                        container.innerHTML = data.bookmarks.map(bookmark => `
+                            <div class="bookmark-item">
+                                <div class="bookmark-content">
+                                    <h3 class="bookmark-title">${bookmark.articleTitle}</h3>
+                                    <p class="bookmark-category">${bookmark.articleCategory || 'General'}</p>
+                                    <a href="${bookmark.articleUrl}" target="_blank" class="bookmark-link">Read Article →</a>
+                                </div>
+                                <button class="remove-bookmark-btn" onclick="removeBookmark('${bookmark._id}')">Remove</button>
+                            </div>
+                        `).join('');
+                    } else {
+                        container.innerHTML = '<p class="empty-state">No bookmarked articles yet. Start bookmarking articles you like!</p>';
+                    }
+                } else {
+                    container.innerHTML = '<p class="error-state">Failed to load bookmarks</p>';
+                }
+            } catch (error) {
+                console.error('Error loading bookmarks:', error);
+                document.getElementById('bookmarks-container').innerHTML = '<p class="error-state">Error loading bookmarks</p>';
+            }
+        }
+
+        async function loadPreferences() {
+            try {
+                const token = window.authAPI.getToken();
+                const response = await fetch('/api/user/preferences', {
+                    headers: {
+                        'Authorization': `Bearer ${token}`
+                    }
+                });
+
+                if (response.ok) {
+                    const data = await response.json();
+                    if (data.success && data.preferences) {
+                        const prefs = data.preferences;
+                        
+                        // Set category checkboxes
+                        prefs.preferredCategories.forEach(cat => {
+                            const checkbox = document.querySelector(`.category-checkbox[value="${cat}"]`);
+                            if (checkbox) checkbox.checked = true;
+                        });
+
+                        // Set newsletter preference
+                        document.getElementById('newsletter-pref').checked = prefs.newsletterSubscribed || false;
+                    }
+                }
+            } catch (error) {
+                console.error('Error loading preferences:', error);
+            }
+        }
+
+        async function savePreferences() {
+            try {
+                const token = window.authAPI.getToken();
+                const categories = Array.from(document.querySelectorAll('.category-checkbox:checked')).map(cb => cb.value);
+                const newsletter = document.getElementById('newsletter-pref').checked;
+
+                const response = await fetch('/api/user/preferences', {
+                    method: 'PUT',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${token}`
+                    },
+                    body: JSON.stringify({
+                        preferredCategories: categories,
+                        newsletterSubscribed: newsletter
+                    })
+                });
+
+                if (response.ok) {
+                    const data = await response.json();
+                    if (data.success) {
+                        alert('Preferences saved successfully!');
+                    }
+                } else {
+                    alert('Failed to save preferences');
+                }
+            } catch (error) {
+                console.error('Error saving preferences:', error);
+                alert('Error saving preferences');
+            }
+        }
+
+        async function removeBookmark(bookmarkId) {
+            try {
+                const token = window.authAPI.getToken();
+                const response = await fetch(`/api/user/bookmarks/${bookmarkId}`, {
+                    method: 'DELETE',
+                    headers: {
+                        'Authorization': `Bearer ${token}`
+                    }
+                });
+
+                if (response.ok) {
+                    await loadBookmarks();
+                } else {
+                    alert('Failed to remove bookmark');
+                }
+            } catch (error) {
+                console.error('Error removing bookmark:', error);
+                alert('Error removing bookmark');
+            }
+        }
+    </script>
+</body>
+</html>
